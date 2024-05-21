@@ -1,12 +1,12 @@
 <template>
 <q-page>
-<div ><ComponenteFor></ComponenteFor></div>
+<div ><DatosGenerales/> </div>
 </q-page>
 
 
 </template>
 
 <script setup lang="ts">
-import ComponenteFor from 'src/components/Componente-For.vue';
+import DatosGenerales from 'src/components/DatosGenerales.vue';
 
 </script>

@@ -1,18 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { defineStore } from 'pinia';
 import { LocalStorage } from 'quasar';
+import DatosGenerales from 'src/components/DatosGenerales.vue';
 
 
 export const useFormulariosControl = defineStore('formulariosControl', {
   state: () => ({
-    Formularios: null,
+    DatosGenerales: null,
   }),
   getters: {
     
   },
   actions: {
-    setFormulario(Formularios: any) {
-      this.Formularios = Formularios;
+    setDatosGenerales(DatosGenerales: any) {
+      this.DatosGenerales = DatosGenerales;
     },
 
     guardarInformacionEnLocalStorage() {
@@ -22,7 +23,7 @@ export const useFormulariosControl = defineStore('formulariosControl', {
 
       const nuevoFormulario = {
         //cedula: (this.datosGenerales as any).cedula,
-        Formularios: this.Formularios,
+        DatosGenerales: this.DatosGenerales,
        
       };
 

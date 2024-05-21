@@ -10,6 +10,19 @@
             <div class="q-mx-auto text-h3">Formulario</div>
             <q-input
         type="text"
+        v-model="datosGeneralesStore.apellido"
+        label="Apellidos:"
+        lazy-rules
+        :rules="[
+          (val) => (val !== null && val !== '') || 'Coloque el apellido',
+          (val) =>
+            /^[A-Za-zÁáÉéÍíÓóÚúÜüÑñ ]+$/.test(val) ||
+            'Caracteres incorrectos (números o signos)',
+        ]"
+        class="col-12"
+      />
+      <q-input
+        type="text"
         v-model="datosGeneralesStore.nombre"
         label="Nombres:"
         lazy-rules
@@ -22,26 +35,25 @@
         class="col-12"
       />
       <q-input
+  type="text"
+  v-model="datosGeneralesStore.direccion"
+  label="Dirección:"
+  lazy-rules
+  :rules="[
+    (val) => (val !== null && val !== '') || 'Coloque la dirección',
+  ]"
+  class="col-12"
+/>
+<q-input
         type="text"
-        v-model="datosGeneralesStore.apellido"
-        label="Apellidos:"
+        v-model="datosGeneralesStore.ocupacion"
+        label="Ocupacion:"
         lazy-rules
         :rules="[
           (val) => (val !== null && val !== '') || 'Coloque el nombre',
           (val) =>
             /^[A-Za-zÁáÉéÍíÓóÚúÜüÑñ ]+$/.test(val) ||
             'Caracteres incorrectos (números o signos)',
-        ]"
-        class="col-12"
-      />
-      <q-input
-        type="number"
-        v-model="datosGeneralesStore.edad"
-        label="Edad:"
-        lazy-rules
-        :rules="[
-          (val) => (val !== null && val !== '') || 'Coloque su edad ',
-          (val) => (val > 0 && val < 100) || 'Coloque solo números',
         ]"
         class="col-12"
       />
@@ -57,17 +69,7 @@
         ]"
         class="col-12"
       />
-      <q-input
-        type="date"
-        v-model="datosGeneralesStore.fecha"
-        label="Fecha"
-        lazy-rules
-        :rules="[
-          (val) =>
-            (val !== null && val !== '') || 'Coloque la fecha de veeduria',
-        ]"
-        class="col-12"
-      />
+    
       <q-input
         type="text"
         v-model="datosGeneralesStore.telefono"
@@ -81,39 +83,34 @@
         class="col-12"
       />
       <q-input
-        type="text"
-        v-model="datosGeneralesStore.instruccion"
-        label="Instruccion:"
-        lazy-rules
-        :rules="[
-          (val) => (val !== null && val !== '') || 'Coloque el nombre',
-          (val) =>
-            /^[A-Za-zÁáÉéÍíÓóÚúÜüÑñ ]+$/.test(val) ||
-            'Caracteres incorrectos (números o signos)',
-        ]"
+  type="tel"
+  v-model="datosGeneralesStore.telefono_fijo"
+  label="Teléfono Fijo:"
+  lazy-rules
+  :rules="[
+    (val) => (val !== null && val !== '') || 'Coloque el teléfono fijo',
+    (val) => /^\d{7,10}$/.test(val) || 'Ingrese un teléfono fijo válido',
+  ]"
+  class="col-12"
+/>
+      <q-select
+        label="Tipo:"
+        v-model="datosGeneralesStore.tipos"
+        :options="opcionesTipo"
         class="col-12"
       />
       <q-input
-        type="email"
-        v-model="datosGeneralesStore.correo"
-        label="Correo"
-        lazy-rules
-        :rules="[(val) => (val !== null && val !== '') || 'Coloque su Correo ']"
-        class="col-12"
-      />
-      <q-input
-        type="text"
-        v-model="datosGeneralesStore.ocupacion"
-        label="Ocupacion:"
-        lazy-rules
-        :rules="[
-          (val) => (val !== null && val !== '') || 'Coloque el nombre',
-          (val) =>
-            /^[A-Za-zÁáÉéÍíÓóÚúÜüÑñ ]+$/.test(val) ||
-            'Caracteres incorrectos (números o signos)',
-        ]"
-        class="col-12"
-      />
+  type="email"
+  v-model="datosGeneralesStore.correo"
+  label="Correo"
+  lazy-rules
+  :rules="[
+    (val) => (val !== null && val !== '') || 'Coloque su Correo',
+    (val) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(val) || 'Ingrese un correo válido',
+  ]"
+  class="col-12"
+/>
+      
       <q-btn type="submit" label="Continuar" color="primary" class="col-12" />
     </div>    
     </q-form>
@@ -129,6 +126,11 @@ const $q = useQuasar();
 const emit = defineEmits(['submit']);
 const datosGeneralesStore = useDatosGenerales();
 const formulariosControl = useFormulariosControl();
+const opcionesTipo = [
+  'Barrio',
+  'Comunidad',
+  'Parroquia',
+];
 function formDatosGeneralesSubmit() {
   if (datosGeneralesStore.nombre.length == 0) {
     $q.notify({
@@ -148,8 +150,64 @@ function formDatosGeneralesSubmit() {
     });
     return;
   }
+  if (datosGeneralesStore.direccion.length == 0) {
+    $q.notify({
+      color: 'red-5',
+      textColor: 'white',
+      icon: 'warning',
+      message: 'no Dejes el campo en blanco',
+    });
+    return;
+  }
+  if (datosGeneralesStore.ocupacion.length == 0) {
+    $q.notify({
+      color: 'red-5',
+      textColor: 'white',
+      icon: 'warning',
+      message: 'no Dejes el campo en blanco',
+    });
+    return;
+  }
+  if (datosGeneralesStore.cedula.length == 0) {
+    $q.notify({
+      color: 'red-5',
+      textColor: 'white',
+      icon: 'warning',
+      message: 'no Dejes el campo en blanco',
+    });
+    return;
+  }
+  if (datosGeneralesStore.telefono.length == 0) {
+    $q.notify({
+      color: 'red-5',
+      textColor: 'white',
+      icon: 'warning',
+      message: 'no Dejes el campo en blanco',
+    });
+    return;
+  }
+  if (datosGeneralesStore.tipos.length == 0) {
+    $q.notify({
+      color: 'red-5',
+      textColor: 'white',
+      icon: 'warning',
+      message: 'no Dejes el campo en blanco',
+    });
 
-  formulariosControl.setFormulario(datosGeneralesStore.$state);
+    return;
+  }
+  if (datosGeneralesStore.correo.length == 0) {
+    $q.notify({
+      color: 'red-5',
+      textColor: 'white',
+      icon: 'warning',
+      message: 'no Dejes el campo en blanco',
+    });
+
+    return;
+  }
+
+  formulariosControl.setDatosGenerales(datosGeneralesStore.$state);
   emit('submit', true);
   formulariosControl.guardarInformacionEnLocalStorage();
 }

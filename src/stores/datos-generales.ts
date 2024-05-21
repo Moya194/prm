@@ -5,16 +5,17 @@ export const useDatosGenerales = defineStore('formDatosGenerales', {
 
   state: () => ({
     nombre: '',
-    edad: '',
+    telefono_fijo: '',
     cedula: '',
-    fecha: '',
+    // fecha: '',
     jefeHogar:'',
     instruccion: '',
     telefono: '',
     correo: '',
     ocupacion:'',
     apellido:'',
-   
+   direccion:'',
+   tipos:','
 
 
   }),
