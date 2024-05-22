@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { defineStore } from 'pinia';
 import { LocalStorage } from 'quasar';
-import DatosGenerales from 'src/components/DatosGenerales.vue';
+
 
 
 export const useFormulariosControl = defineStore('formulariosControl', {
   state: () => ({
     DatosGenerales: null,
+    DatosMascotas:null,
   }),
   getters: {
     
@@ -15,6 +16,9 @@ export const useFormulariosControl = defineStore('formulariosControl', {
     setDatosGenerales(DatosGenerales: any) {
       this.DatosGenerales = DatosGenerales;
     },
+    setDatosMascotas(DatosMascotas: any) {
+      this.DatosMascotas = DatosMascotas;
+      },
 
     guardarInformacionEnLocalStorage() {
       // Obtener la lista actual de productores desde el localStorage

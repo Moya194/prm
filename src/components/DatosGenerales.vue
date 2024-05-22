@@ -7,7 +7,7 @@
       id="FormularioDatosGenerales"
       @validation-error="(ref: any) =>ref.$el.scrollIntoView({ block: 'center', behavior: 'smooth' })">
            <div class="col-6  q-mx-auto">
-            <div class="q-mx-auto text-h3">Formulario</div>
+            <div class="q-mx-auto text-h4">Datos del Propietario</div>
             <q-input
         type="text"
         v-model="datosGeneralesStore.apellido"
@@ -120,8 +120,7 @@
 <script setup lang="ts">
 import { useDatosGenerales } from 'src/stores/datos-generales';
 import { useFormulariosControl } from 'src/stores/formularios-control';
-import { useQuasar } from "quasar";
-// import { useState } from 'vue';
+import { useQuasar } from 'quasar';
 const $q = useQuasar();
 const emit = defineEmits(['submit']);
 const datosGeneralesStore = useDatosGenerales();
