@@ -8,6 +8,7 @@ export const useFormulariosControl = defineStore('formulariosControl', {
   state: () => ({
     DatosGenerales: null,
     DatosMascotas:null,
+    VacunacionMascotas:null,
   }),
   getters: {
     
@@ -18,6 +19,9 @@ export const useFormulariosControl = defineStore('formulariosControl', {
     },
     setDatosMascotas(DatosMascotas: any) {
       this.DatosMascotas = DatosMascotas;
+      },
+      setVacunacionMascota(VacunacionMascota: any){
+        this.VacunacionMascotas = VacunacionMascota;
       },
 
     guardarInformacionEnLocalStorage() {

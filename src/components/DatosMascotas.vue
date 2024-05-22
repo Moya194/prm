@@ -119,7 +119,7 @@
     class="col-12"
   />
   <p v-if="datosMascotasStore.obtencion !== ''">Entero: se refiere a que la mascota no ha sido esterilizada y puede reproducirse.</p>
-  <q-btn type="submit" label="Continuar" color="primary" class="col-12" />
+<q-btn type="submit" label="Continuar" color="primary" class="col-12" />
 </div>
 </q-form>
 
