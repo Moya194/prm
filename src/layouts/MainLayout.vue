@@ -74,6 +74,12 @@ const linksList: EssentialLinkProps[] = [
     icon: 'las la-strikethrough',
     link: 'compo'
   },
+  {
+    title: 'Mascotas',
+    caption: '',
+    icon: 'las la-paw',
+    link: 'mascotas'
+  },
 ];
 
 const leftDrawerOpen = ref(false);

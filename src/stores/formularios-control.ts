@@ -1,44 +1,59 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { defineStore } from 'pinia';
 import { LocalStorage } from 'quasar';
 
-
+interface Formulario {
+  DatosGenerales: any;
+  DatosMascotas: any;
+  VacunacionMascotas: any;
+}
 
 export const useFormulariosControl = defineStore('formulariosControl', {
   state: () => ({
-    DatosGenerales: null,
-    DatosMascotas:null,
-    VacunacionMascotas:null,
+    formularios: [] as Formulario[],
   }),
   getters: {
-    
+    // getters vacíos por ahora
   },
   actions: {
-    setDatosGenerales(DatosGenerales: any) {
-      this.DatosGenerales = DatosGenerales;
+    setDatosGenerales(datosGenerales: any) {
+      const nuevoFormulario = {
+        DatosGenerales: datosGenerales,
+        DatosMascotas: null,
+        VacunacionMascotas: null,
+      };
+      this.formularios.push(nuevoFormulario);
     },
-    setDatosMascotas(DatosMascotas: any) {
-      this.DatosMascotas = DatosMascotas;
-      },
-      setVacunacionMascota(VacunacionMascota: any){
-        this.VacunacionMascotas = VacunacionMascota;
-      },
+    setDatosMascotas(datosMascotas: any) {
+      const ultimoFormulario = this.formularios[this.formularios.length - 1];
+      if (ultimoFormulario) {
+        ultimoFormulario.DatosMascotas = datosMascotas;
+      } else {
+        const nuevoFormulario = {
+          DatosGenerales: null,
+          DatosMascotas: datosMascotas,
+          VacunacionMascotas: null,
+        };
+        this.formularios.push(nuevoFormulario);
+      }
+    },
+    setVacunacionMascota(vacunacionMascota: any) {
+      const ultimoFormulario = this.formularios[this.formularios.length - 1];
+      if (ultimoFormulario) {
+        ultimoFormulario.VacunacionMascotas = vacunacionMascota;
+      } else {
+        const nuevoFormulario = {
+          DatosGenerales: null,
+          DatosMascotas: null,
+          VacunacionMascotas: vacunacionMascota,
+        };
+        this.formularios.push(nuevoFormulario);
+      }
+    },
 
     guardarInformacionEnLocalStorage() {
-      // Obtener la lista actual de productores desde el localStorage
-
-      const listaProductores: any = LocalStorage.getItem('productores') || [];
-
-      const nuevoFormulario = {
-        //cedula: (this.datosGenerales as any).cedula,
-        DatosGenerales: this.DatosGenerales,
-       
-      };
-
-      // Agregar el nuevo productor a la lista
-      listaProductores.push(nuevoFormulario);
-      // Guardar la lista actualizada en el localStorage
-      LocalStorage.set('formulario', listaProductores);
+      const listaFormularios = JSON.parse(LocalStorage.getItem('formularios') || '[]');
+      const nuevaListaFormularios = [...listaFormularios, ...this.formularios];
+      LocalStorage.set('formularios', JSON.stringify(nuevaListaFormularios));
     },
   },
 });

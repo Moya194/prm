@@ -119,7 +119,32 @@
     class="col-12"
   />
   <p v-if="datosMascotasStore.obtencion !== ''">Entero: se refiere a que la mascota no ha sido esterilizada y puede reproducirse.</p>
-<q-btn type="submit" label="Continuar" color="primary" class="col-12" />
+<q-select
+v-model="datosMascotasStore.defuncion"
+:options="optionsdefuncion"
+label="Tiene dencion"
+emit-value
+map-options
+class="col-12" 
+/>
+
+<div v-if="datosMascotasStore.defuncion === 'Si'">
+      <q-input
+        v-model="datosMascotasStore.fechaDefuncion"
+        type="date"
+        label="Fecha de defunción"
+        class="col-12"
+      />
+
+      <q-input
+        v-model="datosMascotasStore.motivoDefuncion"
+        type="text"
+        label="Motivo de defunción"
+        class="col-12"
+      />
+      </div>
+
+  <q-btn type="submit" label="Continuar" color="primary" class="col-12" />
 </div>
 </q-form>
 
@@ -193,6 +218,10 @@ const optionsReproductivo = [
     'En gestacion',
     'Entero',
     'Lactancia',
+];
+const optionsdefuncion = [
+   'Si',
+   'No',
 ];
 function formDatosMascotasSubmit() {
   if (datosMascotasStore.nombre.length == 0) {

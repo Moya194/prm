@@ -90,7 +90,10 @@ function formVacunasMascotasSubmit() {
   }
 
   formulariosControl.setVacunacionMascota(vacuncionMascotaStore.$state);
+
+  formulariosControl.guardarInformacionEnLocalStorage();
   emit('submit', true);
+ 
 }
 
 </script>

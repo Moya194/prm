@@ -16,6 +16,9 @@ export const useDatosMascotas = defineStore('formDatosMascotas', {
       obtencion:',',
       tenencia:'',
       reproductivo:'',
+      defuncion:'',
+      fechaDefuncion:'',
+      motivoDefuncion:'',
   
     }),
   

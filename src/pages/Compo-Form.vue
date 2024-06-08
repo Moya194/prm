@@ -17,8 +17,8 @@ import DatosMascotas from 'src/components/DatosMascotas.vue';
 import VacunacionMascotas from 'src/components/VacunacionMascotas.vue';
 const $q = useQuasar();
 const datosGeneralesf = ref<boolean>(true)
-const datosMascotasf = ref<boolean>(true)
-const vacunacionMascotasf = ref<boolean>(true)
+const datosMascotasf = ref<boolean>(false)
+const vacunacionMascotasf = ref<boolean>(false)
 
 function datosGeneralesForm($ev: boolean) {
     datosGeneralesf.value = !datosGeneralesf.value;
