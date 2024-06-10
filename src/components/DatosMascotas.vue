@@ -180,13 +180,48 @@ const optionsRaza = computed(() => {
         return [
           { label: 'Siamés', value: 'siames' },
           { label: 'Persa', value: 'persa' },
-          { label: 'Maine Coon', value: 'maine-coon' }
+          { label: 'Maine Coon', value: 'Maine-Coon' },
+          { label: 'Bengalí', value: 'bengalí' },
+          { label: 'Sphynx', value: 'Sphynx' },
+          { label: 'Ragdoll', value: 'Ragdoll' },
+          { label: 'British Shorthair', value: 'British-Shorthair' },
+          { label: 'Scottish Fold', value: 'Scottish-Fold' },
+          { label: 'Sphinx', value: 'Sphinx' },
+          { label: 'Angora Turco', value: 'Angora-Turco' },
+          { label: 'Azul Ruso', value: 'Azul-Ruso' },
+          { label: 'Somali', value: 'Somali' },
+          { label: 'Manx', value: 'Manx' },
+          { label: 'American Curl', value: 'American-Curl' },
+          { label: 'Munchkin', value: 'Munchkin' },
+          { label: 'Oriental', value: 'Oriental' },
+          { label: 'Bombay', value: 'Bombay' },
+          { label: 'Burmés', value: 'Burmes' },
+          { label: 'Siamés Oriental', value: 'Siames-Oriental' },
+          { label: 'Savannah', value: 'Savannah' },
         ]
       } else if (datosMascotasStore.especie === 'perro') {
         return [
-          { label: 'Labrador', value: 'labrador' },
+          { label: 'Labrador Retriever', value: 'Labrador-Retriever' },
           { label: 'Pastor Alemán', value: 'pastor-aleman' },
-          { label: 'Golden Retriever', value: 'golden-retriever' }
+          { label: 'Bulldog Francés', value: 'Bulldog-Francés' } ,
+           { label: 'Caniche (Poodle)', value: 'Caniche-(Poodle)' },
+          { label: ' Beagle', value: ' Beagle' },
+          { label: 'Golden Retriever', value: 'golden-retriever' },
+          { label: 'Rottweiler', value: 'Rottweiler' },
+          { label: 'Boxer', value: 'Boxer' },
+          { label: 'Yorkshire Terrier', value: 'Yorkshire-Terrier' } ,
+           { label: 'Dálmata', value: 'Dálmata' },
+          { label: 'Husky Siberiano', value: 'Husky-Siberiano' },
+          { label: 'Pomerania', value: 'Pomerania' },
+          { label: 'Border Collie', value: 'Border-Collie' },
+          { label: 'Chihuahua', value: 'Chihuahua' },
+          { label: 'Dachshund (Teckel)', value: 'Dachshund-(Teckel)' } ,
+           { label: 'Bulldog Inglés', value: 'Bulldog-Inglés' },
+          { label: 'Dóberman', value: 'Dóberman' },
+          { label: 'Shih Tzu', value: 'Shih-Tzu' },
+           { label: 'Australian Shepherd', value: 'Australian-Shepherd' },
+          { label: 'Bichón Frisé', value: 'Bichón-Frisé' },
+          { label: 'Mestizo', value: 'Mestizo' },
         ]
       } else {
         return []
