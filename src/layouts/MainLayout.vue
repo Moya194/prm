@@ -14,7 +14,36 @@
         <q-toolbar-title>
          Mascotas
         </q-toolbar-title>
-        <q-btn flat round dense icon="more_vert" @click="showMoreOptions" />
+        
+          <q-btn flat round dense icon="more_vert" @onClick="handleSocialMedia">
+    <q-menu
+      anchor="bottom left"
+      self="top left"
+      :offset="[10, 10]"
+    >
+      <q-list>
+        <q-item clickable v-close-popup @click="openFacebook('https://www.facebook.com/GADIPCayambe')">
+          <q-item-section avatar>
+            <q-icon name="lab la-facebook-f" />
+          </q-item-section>
+          <q-item-section>Facebook</q-item-section>
+        </q-item>
+        <q-item clickable v-close-popup @click="openYoutube('https://www.youtube.com/channel/UCI929DvdBepU89DG8JcEnKg')">
+          <q-item-section avatar>
+            <q-icon name="lab la-youtube" />
+          </q-item-section>
+          <q-item-section>YouTube</q-item-section>
+        </q-item>
+        <q-item clickable v-close-popup @click="openInstagram('https://www.instagram.com/GADIPCayambe?fbclid=IwAR0eNhHcV6Z8MY81N6F_ARD3Om2Oqu800FicbRa6OHErL3Ms_P41APOiFgw')">
+          <q-item-section avatar>
+            <q-icon name="lab la-instagram" />
+          </q-item-section>
+          <q-item-section>Instagram</q-item-section>
+        </q-item>
+        
+      </q-list>
+    </q-menu>
+  </q-btn>
         <!-- <div>Quasar v{{ $q.version }}</div> -->
       </q-toolbar>
     </q-header>
@@ -87,6 +116,22 @@ const leftDrawerOpen = ref(false);
 function toggleLeftDrawer() {
   leftDrawerOpen.value =!leftDrawerOpen.value;
 }
+
+const handleSocialMedia = (link: string) => {
+  // Mostrar menú (no hace falta implementar nada aquí)
+  window.open(link, '_blank');
+  
+}
+function openFacebook(url: string) {
+   window.open(url, '_blank')
+ }
+ function openYoutube(url: string) {
+  window.open(url, '_blank');
+}
+ function openInstagram(url: string) {
+   window.open(url,'_blank' )
+ }
+
 </script>
 <style scoped>
 .bg-primary {

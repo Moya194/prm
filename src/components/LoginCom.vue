@@ -1,16 +1,17 @@
 <template>
-  <q-page class="flex flex-center col-10 pagina"  >
+  <q-page class="flex flex-center col-12 pagina"  >
     <div class="header col-6">
-      <img src="~assets/ovalo-negro.png" alt="Escudo de Cayambe" class="logo">
-      <tr></tr>
+      <div><img src="~assets/ovalo-negro.png" alt="Escudo de Cayambe" class="logo"></div>
+      <td></td>
+     
       <div class="title text-h3 text-weight-bold">Teletrámites GADIP-MC</div>
     
-    <tr></tr>
+    <tr></tr> 
     <div class="form-container col-8">
     <q-form @submit.prevent="handleSubmit" >
       <q-input v-model="username" label="Ingrese Usuario" required />
       <q-input v-model="password" label="Ingrese Contraseña" type="password" required />
-      <q-btn type="submit" color="primary" class="submit-button">Ingresar</q-btn>
+      <q-btn type="submit" color="teal" class="submit-button glossy">Ingresar</q-btn>
       <p v-if="error" class="error">{{ error }}</p>
     </q-form>
     <div class="extra-options ">
@@ -27,6 +28,7 @@
 </template>
 
 <script setup lang="ts">
+
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
@@ -61,10 +63,16 @@ function goTo(url: string) {
 
 <style scoped>
 .header {
-  background-color: #3297e9;
+  background-color: teal;
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+}
+.submit-button{
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  
 }
 
 .logo {
@@ -82,9 +90,10 @@ function goTo(url: string) {
 .form-container {
   background-color: #fff;
   padding: 60px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 375px;
+  text-align: center;
 }
 
 .extra-options {

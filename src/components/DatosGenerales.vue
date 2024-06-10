@@ -214,3 +214,13 @@ function formDatosGeneralesSubmit() {
 //   localStorage.setItem('formData', JSON.stringify(formData.value));
 // }
 </script>
+<style scoped>
+.botton{
+  
+
+  padding: 10px 20px;
+  margin-top: 20px;
+  
+}
+
+</style>
