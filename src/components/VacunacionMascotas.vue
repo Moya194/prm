@@ -11,7 +11,7 @@
         <q-select
     v-model="vacuncionMascotaStore.vacunacion"
     :options="optionsvacunacion"
-    label="cuantas vacunas tinen"
+    label="cuantas vacunas tienen"
     emit-value
     map-options
     class="col-12"
@@ -53,7 +53,7 @@ const optionsvacunacion = computed(() => {
       if (datosMascotasStore.especie === 'perro') {
         return [
           { label: 'No tiene', value: 'no-tiene' },
-          { label: 'Ravia', value: 'ravia' },
+          { label: 'Rabia', value: 'ravia' },
           { label: 'Tripe', value: 'tripe' },
           { label: 'Pvc', value: 'pvc' },
           { label: 'Otros', value: 'Otros' },
@@ -61,7 +61,7 @@ const optionsvacunacion = computed(() => {
       } else if (datosMascotasStore.especie === 'gato') {
         return [
           { label: 'No tiene', value: 'no-tiene' },
-          { label: 'Ravia', value: 'ravia' },
+          { label: 'Rabia', value: 'ravia' },
           { label: 'Tripe', value: 'tripe' },
           { label: 'Otros', value: 'Otros' }
         ]
