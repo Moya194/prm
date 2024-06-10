@@ -54,15 +54,24 @@ const optionsvacunacion = computed(() => {
       if (datosMascotasStore.especie === 'perro') {
         return [
           { label: 'No tiene', value: 'no-tiene' },
-          { label: 'Rabia', value: 'ravia' },
+          { label: 'Rabia', value: 'rabia' },
           { label: 'Tripe', value: 'tripe' },
           { label: 'Pvc', value: 'pvc' },
+          { label: 'Distemper', value: 'Distemper' },
+          { label: 'Adenovirus canino tipo 1 y tipo 2 ', value: 'Adenovirus canino tipo 1 y tipo 2 ' },
+          { label: 'La Tos de las perreras', value: 'La Tos de las perreras'},
+          { label: 'Leptospirosis', value: 'Leptospirosis'},
           { label: 'Otros', value: 'Otros' },
         ]
       } else if (datosMascotasStore.especie === 'gato') {
         return [
           { label: 'No tiene', value: 'no-tiene' },
-          { label: 'Rabia', value: 'ravia' },
+          { label: 'Rabia', value: 'rabia' },
+          { label: 'Parvovirus', value: 'Parvovirus' },
+          { label: 'Rinotraqueítis', value: 'Rinotraqueítis' },
+          { label: 'Calicivirus', value: 'Calicivirus'},
+          { label: 'Leucemia', value: 'Leucemia'},
+          { label: 'Clamidia', value: 'Clamidia'},
           { label: 'Tripe', value: 'tripe' },
           { label: 'Otros', value: 'Otros' }
         ]
