@@ -14,7 +14,7 @@
         <q-toolbar-title>
          Mascotas
         </q-toolbar-title>
-
+        <q-btn flat round dense icon="more_vert" @click="showMoreOptions" />
         <!-- <div>Quasar v{{ $q.version }}</div> -->
       </q-toolbar>
     </q-header>
@@ -88,7 +88,7 @@ function toggleLeftDrawer() {
   leftDrawerOpen.value =!leftDrawerOpen.value;
 }
 </script>
-<!-- <style scoped>
+<style scoped>
 .bg-primary {
   background-color: #9ca8bb; /* Change this to your desired color */
 }
@@ -96,4 +96,4 @@ function toggleLeftDrawer() {
 .text-white {
   color: white;
 }
-</style> -->
+</style>

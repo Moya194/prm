@@ -11,7 +11,7 @@
         <q-select
     v-model="vacuncionMascotaStore.vacunacion"
     :options="optionsvacunacion"
-    label="cuantas vacunas tienen"
+    label="Cuantas vacunas tienen"
     emit-value
     map-options
     class="col-12"
@@ -26,6 +26,7 @@
   type="text"
    v-model="vacuncionMascotaStore.observacion"
     placeholder="Observaciones"/>
+    <tr></tr>
        
     <q-btn type="submit" label="Continuar" color="primary" class="col-12" />
 

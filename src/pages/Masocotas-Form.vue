@@ -1,6 +1,6 @@
 <template>
-    <div>
-      <h1>Formularios Guardados</h1>
+    <div class="text-h4 q-mx-auto">
+      Formularios Guardados
       <q-table
         :rows="formularios"
         :columns="columns"

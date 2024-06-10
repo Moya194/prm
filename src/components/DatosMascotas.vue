@@ -122,7 +122,7 @@
 <q-select
 v-model="datosMascotasStore.defuncion"
 :options="optionsdefuncion"
-label="Tiene dencion"
+label="Tiene motivo de defuncion"
 emit-value
 map-options
 class="col-12" 
@@ -143,8 +143,13 @@ class="col-12"
         class="col-12"
       />
       </div>
+<td></td>
 
-  <q-btn type="submit" label="Continuar" color="primary" class="col-12" />
+      <q-btn type="submit" label="Continuar" color="primary" class="col-1 q-mx-auto" />
+
+    
+
+  
 </div>
 </q-form>
 
