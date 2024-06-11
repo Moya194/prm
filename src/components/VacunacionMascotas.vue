@@ -58,8 +58,8 @@ const optionsvacunacion = computed(() => {
           { label: 'Tripe', value: 'tripe' },
           { label: 'Pvc', value: 'pvc' },
           { label: 'Distemper', value: 'Distemper' },
-          { label: 'Adenovirus canino tipo 1 y tipo 2 ', value: 'Adenovirus canino tipo 1 y tipo 2 ' },
-          { label: 'La Tos de las perreras', value: 'La Tos de las perreras'},
+          { label: 'Adenovirus canino tipo 1 y tipo 2 ', value: 'Adenovirus-canino-tipo-1-y-tipo-2' },
+          { label: 'La Tos de las perreras', value: 'La-Tos-de-las-perreras'},
           { label: 'Leptospirosis', value: 'Leptospirosis'},
           { label: 'Otros', value: 'Otros' },
         ]

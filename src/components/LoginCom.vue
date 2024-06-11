@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex flex-center col-12 pagina"  >
     <div class="header col-6">
-      <div><img src="~assets/ovalo-negro.png" alt="Escudo de Cayambe" class="logo"></div>
+      <div><img src="~assets/escudo.png" alt="Escudo de Cayambe" class="logo"></div>
       <td></td>
      
       <div class="title text-h3 text-weight-bold">Teletrámites GADIP-MC</div>
